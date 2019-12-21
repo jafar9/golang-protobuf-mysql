@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package test1;
+
+//import "google/protobuf/timestamp.proto";
+
+
+message Person {
+    int64 id = 1;
+    string name = 2;
+    Info info = 3;
+}
+
+message PhoneNumber {
+      string number = 1;
+}
+
+message Address {
+    string street = 2;
+    string zipcode = 3;
+}
+
+message Info {
+    PhoneNumber phone = 1;
+    Address address = 2;
+}
+
+// Our address book file is just one of these.
+message DbData {
+  repeated Person people = 1;
+}
